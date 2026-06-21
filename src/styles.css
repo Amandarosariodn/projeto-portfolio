@@ -95,6 +95,13 @@ app-root {
     }
 }
 
+@media (max-width: 820px) {
+    .route-shell {
+        min-height: calc(100vh - 92px);
+        padding-top: 92px;
+    }
+}
+
 .container{
     width: 90%;
     max-width: 1200px;

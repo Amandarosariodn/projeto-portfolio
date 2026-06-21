@@ -10,6 +10,12 @@
   max-width: 620px;
 }
 
+
+.h5{
+  color: #F66C89;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
 .bookfly-image {
   flex: 1;
   text-align: center;
@@ -108,3 +114,5 @@ padding-bottom: 20px;
 
 
 }
+
+
