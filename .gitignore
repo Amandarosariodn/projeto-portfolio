@@ -61,7 +61,6 @@ pnpm-debug.log*
 # Environment files
 .env
 .env.*
-/src/environment.ts
 !.env.example
 
 # OS / editor

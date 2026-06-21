@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
 import { Footer } from '../../components/footer/footer';
-import { environment } from '../../../environment';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contato',
