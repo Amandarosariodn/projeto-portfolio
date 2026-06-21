@@ -1,0 +1,165 @@
+<main>
+
+  <section class="hero">
+
+    <div class="sticker star">✦</div>
+    <div class="sticker arrow">↺</div>
+    <div class="sticker heart">♡</div>
+
+    <div class="container d-flex flex-column flex-lg-row align-items-center gap-4">
+
+      <div class="hero-text">
+
+        <p class="mini-text">
+          essa sou eu:
+        </p>
+
+        <h2 class="h2">
+          Software Development Intern <br>
+          .NET & Angular Developer
+        </h2>
+
+        <p>
+          Atualmente atuo como estagiária de desenvolvimento de software, trabalhando no desenvolvimento e manutenção de
+          aplicações web utilizando ASP.NET Core, Angular e TypeScript. Tenho interesse em arquitetura de software, boas
+          práticas de desenvolvimento e construção de soluções que gerem valor para os usuários.
+        </p>
+
+        <a routerLink="/contato" class="btn btn-portfolio">
+          entrar em contato
+        </a>
+
+      </div>
+
+      <div class="hero-image text-center">
+
+        <img src="/img/fotoEu.png" alt="Amanda Rosario" class="img-fluid">
+
+      </div>
+
+    </div>
+
+  </section>
+
+<section class="technologies-section">
+  <div class="container">
+
+    <h2 class="h2">tecnologias.</h2>
+
+    <div class="space-y-8">
+      @for (category of technologyCategories; track category.title) {
+
+        <div>
+          <h4 class="h4">{{ category.title }}</h4>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
+            @for (tech of category.technologies; track tech.name) {
+
+              <div
+                class="rounded-2xl flex flex-col items-center justify-center gap-2 p-3 min-h-[110px]
+                       transition-all hover:-translate-y-1 hover:shadow-lg"
+                [ngClass]="category.className">
+
+                <img
+                  [src]="tech.icon"
+                  class="w-8 h-8"
+                  [alt]="tech.name">
+
+                <span class="font-medium text-sm text-center">
+                  {{ tech.name }}
+                </span>
+
+              </div>
+
+            }
+          </div>
+        </div>
+
+      }
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="projetos">
+
+    <div class="container">
+
+      <h2 class="h2">projetos.</h2>
+
+      <div class="cards d-flex flex-column flex-md-row flex-wrap gap-4">
+
+       <article class="card">
+
+  <h3>BookFly</h3>
+  <img
+  src="/img/bookfly-preview.png"
+  alt="BookFly"
+  class="project-image">
+
+  <p>
+    Plataforma social para leitores compartilharem avaliações,
+    participarem de comunidades e descobrirem novos livros.
+  </p>
+
+  <div class="project-tags">
+    <span>Angular</span>
+    <span>.NET</span>
+    <span>PostgreSQL</span>
+    <span>NHibernate</span>
+  </div>
+
+  <a
+    routerLink="/projetos/bookfly"
+    class="btn btn-project">
+
+    Ver projeto →
+
+  </a>
+
+</article>
+
+        <article class="card">
+
+          <h3>chat RMI</h3>
+          <h4>tecnologias/linguagens utilizadas: Java, git.</h4>
+
+          <p>
+            cada cliente se registra no servidor, quando se envia uma mensagem, é transmitida para todos
+            os clientes conectados.
+          </p>
+          <p class="index-links">acompanhe o projeto no repositório:
+            <a href="https://github.com/Amandarosariodn/ChatRMI" target="_blank">repositório
+            </a>
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer
+  class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start gap-3">
+
+  <p>
+    2026
+  </p>
+
+  <div class="footer-links d-flex gap-3">
+
+    <a href="https://github.com/Amandarosariodn" target="_blank">
+      github
+    </a>
+
+    <a href="https://www.linkedin.com/in/amanda-rosario-30848932a/" target="_blank">
+      linkedin
+    </a>
+
+  </div>
+
+</footer>

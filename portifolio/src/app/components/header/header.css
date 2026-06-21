@@ -1,0 +1,35 @@
+.header{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+background-color: #fffbf1;
+ border-bottom: 1px solid #F66C89;
+}
+
+
+.container{
+
+display: flex;
+justify-content: space-between;
+align-items: center;}
+
+.nav-list ul{
+    display: flex;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.nav a{
+    color: #F66C89;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.nav a:hover{
+    color: #F27798;
+}

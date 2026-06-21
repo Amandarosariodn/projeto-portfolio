@@ -1,4 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=DM+Sans:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+  --color-navy: #234D68;
+  --color-pink: #F66C89;
+  --color-coral: #F27798;
+  --color-rust: #B64A30;
+  --color-sand: #BFBB9D;
+  --color-cream: #FFF8F0;
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+@layer components {
+  .topic-tile{
+    @apply relative flex items-center rounded-[28px] border border-sand/10 bg-sand/8 backdrop-blur-md p-5 font-body text-pink transition duration-300 hover:-translate-y-1.5 hover:border-coral;
+  }
+
+  .topic-tile--lg{
+    @apply col-span-2 lg:row-span-2 items-end justify-start bg-pink text-navy font-display text-4xl lg:text-5xl tracking-tight p-7 hover:bg-coral hover:text-cream;
+  }
+
+  .topic-tile--md{
+    @apply col-span-2 justify-center text-center text-sm font-semibold uppercase tracking-[0.15em] lg:min-h-[120px];
+  }
+
+  .topic-tile--sm{
+    @apply justify-center text-center text-xs font-semibold uppercase tracking-[0.15em] bg-coral/10 lg:min-h-[120px];
+  }
+}
 
 *{
     margin: 0;
@@ -70,24 +102,6 @@ header h1{
     color: #F66C89;
 }
 
-nav ul{
-    display: flex;
-    gap: 20px;
-
-    list-style: none;
-}
-
-nav a{
-    color: #F66C89;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-nav a:hover{
-    color: #F27798;
-}
 
 
 .hero{
@@ -97,16 +111,6 @@ nav a:hover{
     align-items: center;
 
     position: relative;
-}
-
-.hero .container{
-    display: grid;
-
-    grid-template-columns: 1.2fr 1fr;
-
-    gap: 60px;
-
-    align-items: center;
 }
 
 .mini-text{
@@ -125,6 +129,10 @@ nav a:hover{
     justify-content: center;
 
     gap: 20px;
+}
+
+.hero-text{
+    flex: 1 1 55%;
 }
 
 .hero-text h2{
@@ -149,28 +157,10 @@ nav a:hover{
     font-size: 1.1rem;
 }
 
-.btn{
-    display: inline-block;
 
-    background: #F27798;
 
-    color: #FFF8F0;
-
-    padding: 16px 28px;
-
-    border-radius: 999px;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.btn:hover{
-    background: #B64A30;
-
-    transform: scale(1.05);
+.hero-image{
+    flex: 1 1 45%;
 }
 
 .hero-image img,
@@ -218,14 +208,6 @@ nav a:hover{
 }
 
 
-.cards{
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: 30px;
-}
-
 .card{
     background: rgba(191, 187, 157, 0.08);
 
@@ -240,6 +222,8 @@ nav a:hover{
     transition: 0.3s;
 
     backdrop-filter: blur(10px);
+
+    flex: 1 1 320px;
 }
 
 .card:nth-child(even){
@@ -268,41 +252,7 @@ nav a:hover{
 
 /* HABILIDADES */
 
-.habilidades ul,
-.tags{
-    display: flex;
 
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-    list-style: none;
-
-    margin-top: 30px;
-}
-
-.habilidades li,
-.tags span{
-    background: #F66C89;
-
-    color: #234D68;
-
-    padding: 14px 24px;
-
-    border-radius: 999px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.tags span:hover{
-    background: #F27798;
-
-    color: white;
-
-    transform: translateY(-3px);
-}
 
 
 
@@ -473,14 +423,12 @@ footer{
 
 @media(max-width: 1024px){
 
-    .hero .container,
     .sobre-grid{
         grid-template-columns: 1fr;
 
         gap: 50px;
     }
 
-    .hero-image,
     .sobre-imagem{
         display: flex;
         justify-content: center;
@@ -520,9 +468,7 @@ footer{
         gap: 15px;
     }
 
-    section{
-        padding: 70px 0;
-    }
+
 
     .hero-text h2,
     .sobre-conteudo h2{
@@ -538,10 +484,6 @@ footer{
     .hero-image img,
     .sobre-imagem img{
         max-width: 320px;
-    }
-
-    .cards{
-        grid-template-columns: 1fr;
     }
 
     table{
