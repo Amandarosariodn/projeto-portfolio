@@ -1,104 +1,95 @@
+<main>
+  <section class="sobre-page">
+    <div class="sticker star">✦</div>
+    <div class="sticker heart">♡</div>
 
-    <main>
+    <div class="container sobre-grid">
+      <div class="sobre-imagem">
+        <img src="/img/fotoEu.png" alt="Amanda Rosario">
 
-        <section class="sobre-page">
+        <div class="mini-card">
+          <p class="mini-title">atualmente:</p>
+          <h3>estagiária de desenvolvimento.</h3>
+        </div>
+      </div>
 
-            <div class="sticker star">✦</div>
-            <div class="sticker heart">♡</div>
+      <div class="sobre-conteudo">
+        <p class="mini-text">sobre mim:</p>
 
-            <div class="container sobre-grid">
+        <h1>criativa, analítica e apaixonada por tecnologia.</h1>
 
-                <div class="sobre-imagem">
+        <div class="sobre-texto">
+          <p>
+            Sou estudante de Sistemas de Informação e atuo como estagiária de desenvolvimento
+            de software, trabalhando com aplicações web, APIs, bancos de dados e integração
+            entre frontend e backend.
+          </p>
 
-                    <img
-                        src="/img/fotoEu.png"
-                        alt="Amanda Rosario"
-                    >
+          <p>
+            Minha trajetória começou ensinando informática e lógica de programação com atividades
+            interativas, jogos e ferramentas como Construct, GameMaker, Unity e Blender. Essa
+            experiência me deu uma visão bem prática sobre como explicar, construir e melhorar
+            soluções digitais.
+          </p>
 
-                    <div class="mini-card">
-
-                        <p class="mini-title">
-                            atualmente:
-                        </p>
-
-                        <h3>
-                            estagiária de desenvolvimento.
-                        </h3>
-
-                    </div>
-
-                </div>
-
-                <div class="sobre-conteudo">
-
-                    <p class="mini-text">
-                        sobre mim:
-                    </p>
-
-                    <h2>
-                        criativa, analítica <br>
-                        e apaixonada por tecnologia.
-                    </h2>
-
-                    <p>
-                        sou estudante da área de tecnologia
-                        com foco em desenvolvimento full stack,
-                        buscando unir criatividade, design e lógica
-                        na construção de experiências digitais.
-                    </p>
-
-                    <p>
-                        já trabalhei como instrutora de informática,
-                        ensinando lógica de programação através de
-                        atividades interativas e desenvolvimento de jogos
-                        utilizando ferramentas como Construct,
-                        GameMaker, Unity e Blender.
-                    </p>
-
-                    <p>
-                        atualmente atuo como estagiária de desenvolvimento
-                        de software, trabalhando com .NET, Angular e PLSQL,
-                        participando da construção de aplicações web,
-                        integração com banco de dados e versionamento com Git.
-                    </p>
-
-                    <div class="tags">
-
-                        <span>Angular</span>
-                        <span>.NET</span>
-                        <span>C#</span>
-                        <span>PLSQL</span>
-                        <span>Git</span>
-                        <span>Unity</span>
-                        <span>Blender</span>
-                        <span>GameMaker</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-
-        <p>
-            2026
-        </p>
-
-        <div class="footer-links">
-
-            <a href="https://github.com/Amandarosariodn" target="_blank">
-                github
-            </a>
-
-            <a href="https://www.linkedin.com/in/amanda-rosario-30848932a/" target="_blank">
-                linkedin
-            </a>
-
+          <p>
+            Hoje meu foco está em desenvolvimento full stack com Angular, TypeScript, .NET, C#,
+            PLSQL e boas práticas de arquitetura. Gosto de unir organização técnica, atenção ao
+            usuário e interfaces que sejam claras de usar.
+          </p>
         </div>
 
-    </footer>
+        <div class="sobre-actions">
+          <a routerLink="/contato" class="btn btn-primary">entrar em contato</a>
+          <a routerLink="/" class="btn btn-secondary">ver projetos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-topicos">
+    <div class="container">
+      <h2>o que estou construindo.</h2>
+
+      <div class="topicos-grid">
+        <article class="topico-card">
+          <span>01</span>
+          <h3>Frontend</h3>
+          <p>Interfaces em Angular e TypeScript, com atenção à responsividade, componentes e experiência de uso.</p>
+        </article>
+
+        <article class="topico-card">
+          <span>02</span>
+          <h3>Backend</h3>
+          <p>APIs e regras de negócio com .NET e C#, conectando dados, integrações e funcionalidades reais.</p>
+        </article>
+
+        <article class="topico-card">
+          <span>03</span>
+          <h3>Arquitetura</h3>
+          <p>Estudo de DDD, SOLID, testes e organização de código para criar projetos mais sustentáveis.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre-stack">
+    <div class="container stack-wrap">
+      <h2>tecnologias e interesses.</h2>
+
+      <div class="tags">
+        <span>Angular</span>
+        <span>TypeScript</span>
+        <span>.NET</span>
+        <span>C#</span>
+        <span>PLSQL</span>
+        <span>Git</span>
+        <span>APIs REST</span>
+        <span>DDD</span>
+        <span>Testes</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Header } from "../../components/header/header";
+import { Footer } from "../../components/footer/footer";
 
 @Component({
   selector: 'app-sobre',
-  imports: [RouterLink, Header],
+  imports: [RouterLink, Footer],
   templateUrl: './sobre.html',
   styleUrl: './sobre.css',
 })
