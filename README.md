@@ -90,29 +90,7 @@ Technologies used:
 
 ## Running the Project
 
-Clone the repository:
-
-```bash
-git clone https://github.com/Amandarosariodn/portfolio.git
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-ng serve
-```
-
-Open:
-
-```txt
-http://localhost:4200
-```
+**You can running the project on this link: https://projeto-portfolio-1mqb2gx49-amanda-rosario-s-projects.vercel.app/
 
 ## Contact
 
