@@ -1,59 +1,130 @@
-# Portifolio
+# Amanda Rosario - Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Portfolio developed to present my professional experience, projects, technical skills and technologies used throughout my journey as a Software Development Intern.
 
-## Development server
+## About
 
-To start a local development server, run:
+This project was created to serve as a central place where recruiters, developers and technology enthusiasts can learn more about my background, experience and featured projects.
+
+The portfolio includes:
+
+* Professional presentation
+* Featured projects
+* Technologies and tools
+* Contact information
+* Responsive interface
+
+## Technologies
+
+### Front-end
+
+* Angular
+* TypeScript
+* HTML5
+* CSS3
+* Tailwind CSS
+
+### Back-end
+
+* C#
+* .NET
+* NHibernate
+
+### Databases
+
+* PostgreSQL
+* MySQL
+* Oracle
+
+### Tools
+
+* Git
+* GitHub
+* Swagger
+* Postman
+
+### Architecture & Quality
+
+* Domain-Driven Design (DDD)
+* REST APIs
+* SOLID Principles
+* xUnit
+
+## Featured Projects
+
+### BookFly
+
+A social platform designed to connect readers through shared literary interests.
+
+Main features:
+
+* Book reviews
+* Reading communities
+* Personalized bookshelves
+* Reading challenges
+* Reading goals
+* Integration with Google Books API
+
+Technologies used:
+
+* ASP.NET Core
+* Angular
+* PostgreSQL
+* NHibernate
+* TypeScript
+
+### Chat RMI
+
+A distributed chat application developed in Java using Remote Method Invocation (RMI).
+
+Main features:
+
+* Multiple connected clients
+* Real-time message broadcasting
+* Client registration through a central server
+
+Technologies used:
+
+* Java
+* Git
+
+## Running the Project
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Amandarosariodn/portfolio.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```txt
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Contact
 
-```bash
-ng generate --help
-```
+LinkedIn:
+[www.linkedin.com/in/amanda-rosario-30848932a](http://www.linkedin.com/in/amanda-rosario-30848932a)
 
-## Building
+GitHub:
+github.com/Amandarosariodn
 
-To build the project run:
+Email:
+[amandaredes15@gmail.com](mailto:amandaredes15@gmail.com)
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Developed by Amanda Rosario.
