@@ -1,0 +1,110 @@
+.bookfly-hero {
+  padding: 80px 0;
+}
+
+.bookfly-text {
+  flex: 1;
+}
+
+.bookfly-text p {
+  max-width: 620px;
+}
+
+.bookfly-image {
+  flex: 1;
+  text-align: center;
+}
+
+.bookfly-image img {
+  width: 100%;
+  max-width: 460px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.bookfly-section {
+  padding: 50px 0;
+}
+
+.bookfly-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.bookfly-card {
+  background: #fff8f0;
+  color: #234d68;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.bookfly-card h3 {
+  color: #f27798;
+  margin-bottom: 12px;
+}
+
+.bookfly-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.bookfly-list li {
+  background: #fff0f4;
+  color: #234d68;
+  padding: 16px 20px;
+  border-radius: 18px;
+  font-weight: 600;
+}
+
+.btn-outline-project {
+  background: transparent;
+  color: #f27798;
+  border: 2px solid #f27798;
+}
+
+.btn-outline-project:hover {
+  background: #f27798;
+  color: #fff8f0;
+}
+
+.project-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-top: 1px solid #F66C89;
+  padding-top: 10px;
+  border-radius: 0 0 24px 24px;
+padding-bottom: 20px;
+  }
+
+  .span-tag{
+    background: #f27798;
+    color: #fff8f0;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+@media (max-width: 768px) {
+  .bookfly-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookfly-list {
+    grid-template-columns: 1fr;
+  }
+
+  .bookfly-image img {
+    height: 220px;
+  }
+
+
+}

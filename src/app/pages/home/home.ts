@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Header } from "../../components/header/header";
 import { TECHNOLOGY_CATEGORIES } from './data/technologies-data';
+import { Footer } from "../../components/footer/footer";
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, CommonModule, NgClass],
+  imports: [RouterLink, CommonModule, NgClass, Footer],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

@@ -41,48 +41,7 @@
 
   </section>
 
-<section class="technologies-section">
-  <div class="container">
-
-    <h2 class="h2">tecnologias.</h2>
-
-    <div class="space-y-8">
-      @for (category of technologyCategories; track category.title) {
-
-        <div>
-          <h4 class="h4">{{ category.title }}</h4>
-
-          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
-            @for (tech of category.technologies; track tech.name) {
-
-              <div
-                class="rounded-2xl flex flex-col items-center justify-center gap-2 p-3 min-h-[110px]
-                       transition-all hover:-translate-y-1 hover:shadow-lg"
-                [ngClass]="category.className">
-
-                <img
-                  [src]="tech.icon"
-                  class="w-8 h-8"
-                  [alt]="tech.name">
-
-                <span class="font-medium text-sm text-center">
-                  {{ tech.name }}
-                </span>
-
-              </div>
-
-            }
-          </div>
-        </div>
-
-      }
-    </div>
-
-  </div>
-</section>
-
-
-  <section class="projetos">
+   <section class="projetos">
 
     <div class="container">
 
@@ -94,9 +53,9 @@
 
   <h3>BookFly</h3>
   <img
-  src="/img/bookfly-preview.png"
+  src="/img/bookfly.png"
   alt="BookFly"
-  class="project-image">
+  class="project-image  w-full max-w-[280px] h-40 object-cover rounded-2xl mx-auto">
 
   <p>
     Plataforma social para leitores compartilharem avaliações,
@@ -141,25 +100,50 @@
 
   </section>
 
-</main>
 
-<footer
-  class="d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start gap-3">
+<section class="technologies-section">
+  <div class="container">
 
-  <p>
-    2026
-  </p>
+    <h2 class="h2">tecnologias.</h2>
 
-  <div class="footer-links d-flex gap-3">
+    <div class="space-y-8">
+      @for (category of technologyCategories; track category.title) {
 
-    <a href="https://github.com/Amandarosariodn" target="_blank">
-      github
-    </a>
+        <div>
+          <h4 class="h4">{{ category.title }}</h4>
 
-    <a href="https://www.linkedin.com/in/amanda-rosario-30848932a/" target="_blank">
-      linkedin
-    </a>
+          <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            @for (tech of category.technologies; track tech.name) {
+
+              <div
+                class="rounded-2xl flex flex-col items-center justify-center gap-2 p-3 min-h-[110px]
+                       transition-all hover:-translate-y-1 hover:shadow-lg"
+                [ngClass]="category.className">
+
+                <img
+                  [src]="tech.icon"
+                  class="w-8 h-8"
+                  [alt]="tech.name">
+
+                <span class="font-medium text-sm text-center">
+                  {{ tech.name }}
+                </span>
+
+              </div>
+
+            }
+          </div>
+        </div>
+
+      }
+    </div>
 
   </div>
+</section>
 
-</footer>
+
+
+</main>
+
+<app-footer></app-footer>
+

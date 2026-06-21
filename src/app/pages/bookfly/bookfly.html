@@ -1,1 +1,120 @@
-<p>bookfly works!</p>
+<main>
+
+  <section class="bookfly-hero">
+    <div class="container d-flex flex-column flex-lg-row align-items-center gap-5">
+
+      <div class="bookfly-text">
+        <p class="mini-text">projeto em destaque:</p>
+
+        <h1 class="h2">BookFly</h1>
+
+        <p>
+          Plataforma social para leitores compartilharem avaliações,
+          criarem comunidades e descobrirem novos livros através de
+          interesses literários em comum.
+        </p>
+
+        <div class="project-tags">
+          <span class="span-tag">Angular</span>
+          <span class="span-tag">.NET</span>
+          <span class="span-tag">PostgreSQL</span>
+          <span class="span-tag">NHibernate</span>
+          <span class="span-tag">Google Books API</span>
+        </div>
+
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="https://github.com/Amandarosariodn/bookfly" target="_blank" class="btn btn-portfolio">
+            Ver repositório
+          </a>
+
+          <a routerLink="/" class="btn btn-outline-project">
+            Voltar para home
+          </a>
+        </div>
+      </div>
+
+      <div class="bookfly-image">
+        <img src="/img/preview-bookfly.png" alt="Preview do BookFly" class="img-fluid">
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bookfly-section">
+    <div class="container">
+
+      <h2 class="h2">sobre o projeto.</h2>
+
+      <div class="bookfly-grid">
+
+        <article class="bookfly-card">
+          <h3>Problema</h3>
+          <p>
+            Leitores muitas vezes têm dificuldade para encontrar pessoas com gostos parecidos
+            e acompanhar suas leituras em um ambiente voltado para livros.
+          </p>
+        </article>
+
+        <article class="bookfly-card">
+          <h3>Solução</h3>
+          <p>
+            O BookFly centraliza avaliações, comunidades, estantes e recomendações,
+            criando uma experiência social focada no universo literário.
+          </p>
+        </article>
+
+        <article class="bookfly-card">
+          <h3>Objetivo</h3>
+          <p>
+            Construir uma aplicação web completa, aplicando conceitos de frontend,
+            backend, banco de dados, integração externa e arquitetura em camadas.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bookfly-section">
+    <div class="container">
+
+      <h2 class="h2">funcionalidades.</h2>
+
+      <ul class="bookfly-list">
+        <li>Avaliação de livros</li>
+        <li>Criação de comunidades literárias</li>
+        <li>Comentários e interações entre usuários</li>
+        <li>Estantes personalizadas</li>
+        <li>Metas de leitura</li>
+        <li>Integração com a Google Books API</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section class="bookfly-section">
+    <div class="container">
+
+      <h2 class="h2">arquitetura.</h2>
+
+      <div class="bookfly-card">
+        <p>
+          O backend foi desenvolvido com ASP.NET Core, utilizando PostgreSQL como banco de dados
+          e NHibernate para o mapeamento objeto-relacional. A aplicação segue uma organização em
+          camadas, separando responsabilidades entre API, aplicação, domínio e infraestrutura.
+        </p>
+
+        <p>
+          No frontend, a interface foi construída com Angular e TypeScript, consumindo os endpoints
+          da API e exibindo os dados relacionados a livros, comunidades, avaliações e usuários.
+        </p>
+        <p>Fiquei responsável pela implementação do backend e pela integração com a Google Books API.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <app-footer></app-footer>
+
+</main>

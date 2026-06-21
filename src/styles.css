@@ -391,35 +391,7 @@ button:hover{
 }
 
 
-footer{
-    padding: 40px;
 
-    text-align: center;
-
-    color: #BFBB9D;
-}
-
-.footer-links{
-    margin-top: 15px;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
-}
-
-.footer-links a{
-    color: #F66C89;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.footer-links a:hover{
-    color: #F27798;
-}
 
 @media(max-width: 1024px){
 
