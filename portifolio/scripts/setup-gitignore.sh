@@ -11,7 +11,10 @@ append_block_if_missing() {
   marker="$2"
   block="$3"
 
-  touch "$file"
+  if ! touch "$file" 2>/dev/null; then
+    echo "warning: could not write $file; skipping"
+    return
+  fi
 
   if grep -Fq "$marker" "$file"; then
     echo "ok: $file already has $marker"

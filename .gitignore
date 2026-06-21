@@ -1,0 +1,11 @@
+
+# Portifolio Angular project ignores
+portifolio/node_modules/
+portifolio/dist/
+portifolio/.angular/cache/
+portifolio/coverage/
+portifolio/tmp/
+portifolio/out-tsc/
+portifolio/.env
+portifolio/.env.*
+!portifolio/.env.example
