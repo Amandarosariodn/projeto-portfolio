@@ -1,0 +1,49 @@
+<h1 class="page-title">{{ i18n.t('projects.title') }}</h1>
+
+<div class="docs">
+  @for (project of projects; track project.slug) {
+    <article class="doc">
+      @if (project.status) {
+        <span class="stamp">{{ i18n.pick(project.status) }}</span>
+      }
+
+      @if (project.image) {
+        <div class="shot">
+          <img [src]="project.image" [alt]="project.name" loading="lazy">
+        </div>
+      } @else if (project.codePreview) {
+        <pre class="shot shot--code" aria-hidden="true">{{ project.codePreview }}</pre>
+      }
+
+      <div class="body">
+        <h2>{{ project.name }}</h2>
+        <p>{{ i18n.pick(project.summary) }}</p>
+
+        <div class="chips">
+          @for (tag of project.tags; track tag) {
+            <span>{{ tag }}</span>
+          }
+        </div>
+
+        <div class="links">
+          @if (project.detail) {
+            <a class="text-link" [routerLink]="['/projetos', project.slug]">{{ i18n.t('projects.details') }}</a>
+          }
+          @if (project.site) {
+            <a class="text-link" [href]="project.site" target="_blank" rel="noreferrer">{{ i18n.t('projects.site') }}</a>
+          }
+          @if (project.repo) {
+            <a class="text-link" [href]="project.repo" target="_blank" rel="noreferrer">{{ i18n.t('projects.repo') }}</a>
+          }
+        </div>
+      </div>
+    </article>
+  }
+
+  <article class="doc doc--more">
+    <span class="plus" aria-hidden="true">+</span>
+    <h2>{{ i18n.t('projects.moreTitle') }}</h2>
+    <p>{{ i18n.t('projects.moreText') }}</p>
+    <a class="text-link" [href]="github" target="_blank" rel="noreferrer">{{ i18n.t('projects.moreLink') }}</a>
+  </article>
+</div>

@@ -1,0 +1,45 @@
+<h1 class="page-title">{{ i18n.t('fun.title') }}</h1>
+
+<div class="cork">
+  <p class="eyebrow cork-label">{{ i18n.t('fun.eyebrow') }}</p>
+
+  <ul class="pins">
+    @for (fact of facts; track $index; let i = $index) {
+      <li
+        class="pinned"
+        [attr.data-style]="fact.style"
+        [style.--r]="rotation(i)"
+        [style.--pin]="pin(i)">
+        @if (fact.style === 'polaroid' && fact.image) {
+          <img
+            class="photo photo--image"
+            [src]="fact.image"
+            [alt]="fact.value ? i18n.pick(fact.value) : i18n.pick(fact.label)"
+            loading="lazy">
+          <p class="label">{{ i18n.pick(fact.label) }}</p>
+          @if (fact.value) {
+            <p class="caption">{{ i18n.pick(fact.value) }}</p>
+          }
+        } @else if (fact.style === 'polaroid') {
+          <div class="photo">
+            @if (fact.value) {
+              {{ i18n.pick(fact.value) }}
+            } @else {
+              <span class="todo">{{ i18n.t('todo.missing') }}</span>
+            }
+          </div>
+          <p class="label">{{ i18n.pick(fact.label) }}</p>
+        } @else {
+          <p class="label">{{ i18n.pick(fact.label) }}</p>
+          <p class="value">
+            @if (fact.value) {
+              {{ i18n.pick(fact.value) }}
+            } @else {
+              <span class="todo">{{ i18n.t('todo.missing') }}</span>
+            }
+          </p>
+        }
+      </li>
+    }
+  </ul>
+</div>

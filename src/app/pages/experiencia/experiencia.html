@@ -1,0 +1,75 @@
+<h1 class="page-title">{{ i18n.t('exp.title') }}</h1>
+
+<ol class="cards">
+  @for (exp of experiences; track $index) {
+    @let total = span(exp);
+    <li class="index-card">
+      @if (exp.current) {
+        <span class="stamp">{{ i18n.t('exp.ongoing') }}</span>
+      }
+
+      <header class="company">
+        <p class="place">
+          @if (exp.place) {
+            {{ exp.place }}
+          } @else {
+            <span class="todo">{{ i18n.t('todo.missing') }}</span>
+          }
+        </p>
+        <p class="when">
+          <ng-container *ngTemplateOutlet="month; context: { $implicit: total.start }" />
+          @if (exp.current) {
+            → {{ i18n.t('exp.present') }}
+          } @else if (total.end) {
+            → {{ i18n.month(total.end) }}
+          }
+        </p>
+        @if (exp.mode) {
+          <p class="when">{{ i18n.pick(exp.mode) }}</p>
+        }
+      </header>
+
+      <div class="roles">
+        @for (role of exp.roles; track $index; let first = $first; let last = $last) {
+          <section class="role" [class.role--past]="!first">
+            <h2>{{ i18n.pick(role.title) }}</h2>
+            <p class="when">
+              <ng-container *ngTemplateOutlet="month; context: { $implicit: role.start }" />
+              @if (role.end) {
+                → {{ i18n.month(role.end) }}
+              } @else if (exp.current && first) {
+                → {{ i18n.t('exp.present') }}
+              }
+            </p>
+
+            @if (role.achievements?.length) {
+              <ul class="achievements" [attr.aria-label]="i18n.t('exp.achievement')">
+                @for (item of role.achievements; track $index) {
+                  <li>{{ i18n.pick(item) }}</li>
+                }
+              </ul>
+            }
+
+            <ul class="highlights">
+              @for (item of role.highlights; track $index) {
+                <li>{{ i18n.pick(item) }}</li>
+              }
+            </ul>
+          </section>
+
+          @if (!last) {
+            <p class="promotion" aria-hidden="true">↑ {{ i18n.t('exp.promoted') }}</p>
+          }
+        }
+      </div>
+    </li>
+  }
+</ol>
+
+<ng-template #month let-value>
+  @if (value) {
+    {{ i18n.month(value) }}
+  } @else {
+    <span class="todo">{{ i18n.t('todo.missing') }}</span>
+  }
+</ng-template>

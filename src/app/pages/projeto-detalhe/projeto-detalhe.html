@@ -1,0 +1,76 @@
+<a class="back text-link" routerLink="/projetos">{{ i18n.t('project.back') }}</a>
+
+@if (project(); as project) {
+  <section class="sheet">
+    @if (project.status) {
+      <span class="stamp">{{ i18n.pick(project.status) }}</span>
+    }
+
+    <div class="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
+      <div class="flex flex-col gap-5">
+        <h1 class="page-title !mb-0">{{ project.name }}</h1>
+        <p class="text-[1.05rem]">{{ i18n.pick(project.summary) }}</p>
+
+        <div class="chips">
+          @for (tag of project.tags; track tag) {
+            <span>{{ tag }}</span>
+          }
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          @if (project.site) {
+            <a class="btn" [href]="project.site" target="_blank" rel="noreferrer">{{ i18n.t('project.visit') }} ↗</a>
+          }
+          @if (project.repo) {
+            <a class="btn btn--ghost" [href]="project.repo" target="_blank" rel="noreferrer">{{ i18n.t('project.repo') }} ↗</a>
+          }
+        </div>
+      </div>
+
+      @if (project.image) {
+        <img class="preview" [src]="project.image" [alt]="project.name">
+      }
+    </div>
+
+    @if (project.detail; as detail) {
+      <h2 class="section-title">{{ i18n.t('project.about') }}</h2>
+      <div class="grid gap-5 md:grid-cols-3">
+        <article class="note">
+          <h3>{{ i18n.t('project.problem') }}</h3>
+          <p>{{ i18n.pick(detail.problem) }}</p>
+        </article>
+        <article class="note">
+          <h3>{{ i18n.t('project.solution') }}</h3>
+          <p>{{ i18n.pick(detail.solution) }}</p>
+        </article>
+        <article class="note">
+          <h3>{{ i18n.t('project.goal') }}</h3>
+          <p>{{ i18n.pick(detail.goal) }}</p>
+        </article>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-[1fr_1.4fr] md:gap-12">
+        <div>
+          <h2 class="section-title">{{ i18n.t('project.features') }}</h2>
+          <ul class="checklist">
+            @for (feature of detail.features; track $index) {
+              <li>{{ i18n.pick(feature) }}</li>
+            }
+          </ul>
+        </div>
+        <div>
+          <h2 class="section-title">{{ i18n.t('project.architecture') }}</h2>
+          <div class="flex flex-col gap-4">
+            @for (paragraph of detail.architecture; track $index) {
+              <p>{{ i18n.pick(paragraph) }}</p>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+} @else {
+  <section class="sheet">
+    <p>{{ i18n.t('project.notFound') }}</p>
+  </section>
+}

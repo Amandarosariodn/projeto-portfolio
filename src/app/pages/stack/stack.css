@@ -1,0 +1,74 @@
+[data-group="front"] { --sticker: var(--color-folder-sobre); }
+[data-group="back"] { --sticker: var(--color-folder-projetos); }
+[data-group="data"] { --sticker: var(--color-folder-inicio); }
+[data-group="tools"] { --sticker: var(--color-folder-stack); }
+[data-group="arch"] { --sticker: var(--color-folder-contato); }
+
+/* folha pontilhada onde os adesivos ficam colados */
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 14px;
+  min-height: 380px;
+  padding: 20px;
+  background-color: #fff;
+  background-image: radial-gradient(rgb(29 27 38 / 0.12) 1px, transparent 1px);
+  background-size: 18px 18px;
+  border-radius: 6px;
+}
+
+.sticker {
+  position: relative;
+  padding: 10px 16px;
+  background: var(--sticker);
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transform: translate(var(--x, 0), var(--y, 0)) rotate(var(--r, 0deg));
+}
+
+.sticker.dragging {
+  z-index: 10;
+  cursor: grabbing;
+  box-shadow: 6px 8px 0 var(--color-ink);
+}
+
+.sticker small {
+  margin-left: 6px;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.legend li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  background: var(--sticker);
+  border: 1px solid var(--color-ink);
+  border-radius: 50%;
+}

@@ -1,0 +1,29 @@
+<h1 class="page-title">{{ i18n.t('stack.title') }}</h1>
+
+<div class="mb-4 -mt-3 flex flex-wrap items-center justify-between gap-3">
+  <p class="eyebrow !mb-0">{{ i18n.t('stack.hint') }}</p>
+  <button type="button" class="btn btn--ghost !px-4 !py-2 !text-xs" (click)="tidy()">
+    {{ i18n.t('stack.reset') }}
+  </button>
+</div>
+
+<div class="board">
+  @for (tech of technologies; track tech.name; let i = $index) {
+    <span
+      class="sticker"
+      [attr.data-group]="tech.group"
+      [style.--r]="rotation(i)"
+      appDraggable>
+      {{ tech.name }}
+      @if (tech.note) {
+        <small>{{ tech.note }}</small>
+      }
+    </span>
+  }
+</div>
+
+<ul class="legend">
+  @for (group of groups; track group.key) {
+    <li [attr.data-group]="group.key">{{ i18n.t(group.label) }}</li>
+  }
+</ul>

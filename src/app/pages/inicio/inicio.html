@@ -1,0 +1,27 @@
+<section class="sheet">
+  <div class="grid items-center gap-8 md:grid-cols-[1.4fr_1fr] md:gap-16">
+    <div>
+      <p class="eyebrow">{{ i18n.t('home.eyebrow') }}</p>
+
+      <h1 class="name">amanda<br><span class="outline">rosario</span></h1>
+
+      <div class="role">
+        <span class="tape">dev fullstack jr.</span>
+        <span class="tape">.NET + Angular</span>
+      </div>
+
+      <p class="lead">{{ i18n.t('home.lead') }}</p>
+
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a class="btn" routerLink="/projetos">{{ i18n.t('home.ctaProjects') }}</a>
+        <a class="btn btn--ghost" routerLink="/contato">{{ i18n.t('home.ctaContact') }}</a>
+      </div>
+    </div>
+
+    <figure class="polaroid">
+      <span class="clip" aria-hidden="true"></span>
+      <img src="/img/fotoEu.png" [alt]="i18n.t('home.photoAlt')" width="800" height="800">
+      <figcaption>{{ i18n.t('home.photoCaption') }}</figcaption>
+    </figure>
+  </div>
+</section>
