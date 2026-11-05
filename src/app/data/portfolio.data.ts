@@ -80,7 +80,7 @@ export const PROFILE: Profile = {
   name: 'Amanda Rosario',
   github: 'https://github.com/Amandarosariodn',
   linkedin: 'https://www.linkedin.com/in/amanda-rosario-30848932a/',
-  cv: { pt: null, en: null },
+  cv: { pt: '/cv/amanda-rosario-cv-pt.pdf', en: '/cv/amanda-rosario-cv-en.pdf' },
   education: {
     course: { pt: 'Sistemas de Informação', en: 'Information Systems' },
     institution: 'Unisales',
