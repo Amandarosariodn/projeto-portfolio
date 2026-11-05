@@ -1,0 +1,100 @@
+.docs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 28px;
+}
+
+/* cada projeto é um documento solto dentro da pasta */
+.doc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper);
+  border-radius: 4px;
+  box-shadow: 0 14px 30px -14px rgb(0 0 0 / 0.45);
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.doc:nth-child(odd) {
+  transform: rotate(-0.8deg);
+}
+
+.doc:nth-child(even) {
+  transform: rotate(0.9deg);
+}
+
+.doc:hover {
+  transform: translateY(-8px) rotate(0);
+}
+
+.shot {
+  margin: 14px 14px 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #e8e6f2;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.shot--code {
+  padding: 16px;
+  background: var(--color-ink);
+  color: #b8c4ff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 20px 22px;
+}
+
+.doc h2 {
+  font-size: 1.7rem;
+}
+
+.doc p {
+  color: var(--color-ink-soft);
+  font-size: 15px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.doc--more {
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 300px;
+  padding: 24px;
+  text-align: center;
+  background: transparent;
+  border: 2px dashed rgb(29 27 38 / 0.45);
+  box-shadow: none;
+}
+
+.doc--more h2 {
+  font-size: 1.3rem;
+}
+
+.plus {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+}

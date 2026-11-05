@@ -1,59 +1,65 @@
-<main>
-  <section class="contato">
-    <div class="container">
-      <h2>entre em contato.</h2>
+<section class="sheet">
+  <p class="eyebrow">{{ i18n.t('contact.eyebrow') }}</p>
+  <h1 class="page-title">{{ i18n.t('contact.title') }}</h1>
 
-      <form (ngSubmit)="enviarEmail()">
-
-        <label for="nome">nome</label>
+  <div class="grid gap-10 md:grid-cols-[1.2fr_1fr] md:gap-14">
+    <form class="letter" (ngSubmit)="send()" novalidate>
+      <label for="nome">
+        {{ i18n.t('contact.name') }}
         <input
-          type="text"
           id="nome"
           name="nome"
-          placeholder="digite seu nome"
+          type="text"
+          autocomplete="name"
+          [placeholder]="i18n.t('contact.namePh')"
           [(ngModel)]="form.nome"
           required>
+      </label>
 
-        <label for="email">e-mail</label>
+      <label for="email">
+        {{ i18n.t('contact.email') }}
         <input
-          type="email"
           id="email"
           name="email"
-          placeholder="digite seu e-mail"
+          type="email"
+          autocomplete="email"
+          [placeholder]="i18n.t('contact.emailPh')"
           [(ngModel)]="form.email"
           required>
+      </label>
 
-        <label for="mensagem">mensagem</label>
+      <label for="mensagem">
+        {{ i18n.t('contact.message') }}
         <textarea
           id="mensagem"
           name="mensagem"
-          rows="5"
-          placeholder="digite sua mensagem"
+          rows="4"
+          [placeholder]="i18n.t('contact.messagePh')"
           [(ngModel)]="form.mensagem"
-          required>
-        </textarea>
+          required></textarea>
+      </label>
 
-        <button type="submit" [disabled]="enviando">
-          {{ enviando ? 'enviando...' : 'enviar' }}
+      <div>
+        <button class="btn" type="submit" [disabled]="status() === 'sending'">
+          {{ status() === 'sending' ? i18n.t('contact.sending') : i18n.t('contact.send') }}
         </button>
+      </div>
 
-        <div class="mensagem-area" aria-live="polite">
-          @if (sucesso) {
-            <p class="mensagem-feedback mensagem-sucesso">
-              mensagem enviada com sucesso!
-            </p>
-          }
+      <p class="feedback" [attr.data-status]="status()" aria-live="polite">
+        @switch (status()) {
+          @case ('success') { {{ i18n.t('contact.success') }} }
+          @case ('error') { {{ i18n.t('contact.error') }} }
+          @case ('invalid') { {{ i18n.t('contact.invalid') }} }
+        }
+      </p>
+    </form>
 
-          @if (erro) {
-            <p class="mensagem-feedback mensagem-erro">
-              erro ao enviar mensagem. tente novamente.
-            </p>
-          }
-        </div>
-
-      </form>
+    <div class="grid content-start gap-3.5">
+      @if (cvUrl(); as cv) {
+        <a class="ticket ticket--cv" [href]="cv" download>{{ i18n.t('contact.cv') }}</a>
+      }
+      <a class="ticket" [href]="profile.github" target="_blank" rel="noreferrer">github / Amandarosariodn</a>
+      <a class="ticket" [href]="profile.linkedin" target="_blank" rel="noreferrer">linkedin / amanda-rosario</a>
     </div>
-  </section>
-</main>
-
-<app-footer></app-footer>
+  </div>
+</section>

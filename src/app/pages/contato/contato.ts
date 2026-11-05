@@ -1,62 +1,57 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
 
-import { Footer } from '../../components/footer/footer';
+import { I18n } from '../../core/i18n/i18n';
+import { PROFILE } from '../../data/portfolio.data';
 import { environment } from '../../../environments/environment';
+
+type Status = 'idle' | 'sending' | 'success' | 'error' | 'invalid';
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 @Component({
   selector: 'app-contato',
-  standalone: true,
-  imports: [Footer, FormsModule],
+  imports: [FormsModule],
   templateUrl: './contato.html',
   styleUrl: './contato.css',
+  host: { class: 'panel' },
 })
 export class Contato {
-  form = {
-    nome: '',
-    email: '',
-    mensagem: '',
-  };
+  protected readonly i18n = inject(I18n);
+  protected readonly profile = PROFILE;
 
-  enviando = false;
-  sucesso = false;
-  erro = false;
+  protected readonly form = { nome: '', email: '', mensagem: '' };
+  protected readonly status = signal<Status>('idle');
 
-  enviarEmail(): void {
-    if (!this.form.nome || !this.form.email || !this.form.mensagem) {
+  protected readonly cvUrl = computed(() => PROFILE.cv[this.i18n.lang()] ?? PROFILE.cv.pt);
+
+  protected async send(): Promise<void> {
+    const nome = this.form.nome.trim();
+    const email = this.form.email.trim();
+    const mensagem = this.form.mensagem.trim();
+
+    if (!nome || !EMAIL_PATTERN.test(email) || !mensagem) {
+      this.status.set('invalid');
       return;
     }
 
-    this.enviando = true;
-    this.sucesso = false;
-    this.erro = false;
-    emailjs
-      .send(
+    this.status.set('sending');
+
+    try {
+      await emailjs.send(
         environment.emailJs.serviceId,
         environment.emailJs.templateId,
-        {
-          from_name: this.form.nome,
-          from_email: this.form.email,
-          message: this.form.mensagem,
-        },
-        environment.emailJs.publicKey
-      )
-      .then(() => {
-        this.enviando = false;
-        this.sucesso = true;
-
-        this.form = {
-          nome: '',
-          email: '',
-          mensagem: '',
-        };
-      })
-     .catch((error) => {
-  console.error('Erro EmailJS:', error);
-
-  this.enviando = false;
-  this.erro = true;
-});
+        { from_name: nome, from_email: email, message: mensagem },
+        environment.emailJs.publicKey,
+      );
+      this.form.nome = '';
+      this.form.email = '';
+      this.form.mensagem = '';
+      this.status.set('success');
+    } catch (error) {
+      console.error('Erro EmailJS:', error);
+      this.status.set('error');
+    }
   }
 }

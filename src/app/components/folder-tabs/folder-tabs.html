@@ -1,0 +1,17 @@
+<nav #scroller class="tabs-scroll" [attr.aria-label]="i18n.t('nav.label')">
+  <ul class="tabs">
+    @for (folder of folders; track folder.key; let i = $index) {
+      <li>
+        <a
+          class="tab"
+          [routerLink]="folder.path"
+          [class.is-active]="folder.key === active()"
+          [attr.aria-current]="folder.key === active() ? 'page' : null"
+          [style.--tab-color]="color(folder.key)">
+          <span class="num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+          <span class="label">{{ i18n.t(folder.label) }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
